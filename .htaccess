@@ -1,0 +1,20 @@
+# .htaccess for Electronics Store
+# Disable directory listing
+Options -Indexes
+
+# Protect sensitive backend files
+<FilesMatch "^(config\.php|fix-schema\.php|insert-sample-data\.php|test-connection\.php|utils\.php)$">
+    Require all denied
+</FilesMatch>
+
+# Enable rewrite engine for clean URLs (requires mod_rewrite)
+RewriteEngine On
+RewriteBase /
+
+# Example: Clean product detail URL: /products/123 -> /pages/product-detail.php?id=123
+RewriteRule ^products/([0-9]+)$ /pages/product-detail.php?id=$1 [L,QSA]
+
+# Fallback: route requests for pretty URLs to index if needed
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ /index.php [L,QSA]

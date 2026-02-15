@@ -1,0 +1,331 @@
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--secondary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+        padding: 1rem 0;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none !important;
+        width: 100%;
+        box-shadow: none;
+        background-color: var(--dark-color);
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none !important;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block !important;
+    }
+
+    /* Hero */
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Search */
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input,
+    .filter-input {
+        min-width: unset;
+        width: 100%;
+    }
+
+    /* Grid adjustments */
+    .products-grid,
+    .categories-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    /* Product image scaling on tablet */
+    .product-image {
+        height: 180px;
+    }
+
+    /* Tables */
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.75rem;
+    }
+
+    /* Table product images on tablet */
+    .table img {
+        max-width: 60px;
+    }
+
+    .table td.product-image-cell img {
+        max-width: 60px;
+        height: 45px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .navbar-brand h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .featured-products h2,
+    .categories-section h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Product & Category grid */
+    .products-grid,
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Product card */
+    .product-image {
+        height: 150px;
+        font-size: 3rem;
+    }
+
+    .product-card {
+        margin: 0;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .product-actions .btn {
+        width: 100%;
+    }
+
+    /* Forms */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer sections */
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        margin-top: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-section:first-child h3 {
+        margin-top: 0;
+    }
+
+    .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        margin: 5px;
+        flex-shrink: 0;
+    }
+
+    /* Tables responsive */
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.5rem;
+    }
+
+    /* Table product images on mobile */
+    .table img {
+        max-width: 50px;
+    }
+
+    .table td.product-image-cell img {
+        max-width: 50px;
+        height: 40px;
+    }
+
+    /* Utility adjustments */
+    .container {
+        padding: 0 10px;
+    }
+}
+
+/* Landscape Mobile (600px and below, but height sensitive) */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Large screens (1200px and above) */
+@media (min-width: 1201px) {
+    .products-grid,
+    .categories-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Extra large screens (1400px and above) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .footer,
+    .search-section,
+    .btn-print-hide,
+    .modal {
+        display: none !important;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .product-card {
+        page-break-inside: avoid;
+    }
+
+    .table {
+        border: 1px solid #000;
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid #000;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .nav-link,
+    .category-card {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        min-height: 50px;
+        min-width: 50px;
+    }
+
+    .category-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    /* Optional: Add dark mode styles here */
+    /* For now, keeping light theme as primary */
+}
