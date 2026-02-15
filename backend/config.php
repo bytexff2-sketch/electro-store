@@ -9,15 +9,16 @@ error_reporting(E_ALL);
 ini_set('display_errors', 0);  // Don't show HTML errors
 ini_set('log_errors', 1);       // Log errors to file
 
-// Database credentials
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', 'Andrea2004@'); // Change this to your MySQL password
-define('DB_NAME', 'electronics_store');
+// Database credentials - use environment variables
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_NAME', getenv('DB_NAME') ?: 'electronics_store');
+define('DB_PORT', getenv('DB_PORT') ?: '3306');
 
 // Application settings
 define('APP_NAME', 'Electronics Store');
-define('APP_URL', 'http://localhost');
+define('APP_URL', getenv('APP_URL') ?: 'http://localhost');
 define('SESSION_TIMEOUT', 3600); // 1 hour in seconds
 
 // Security settings
@@ -32,7 +33,7 @@ define('ITEMS_PER_PAGE', 12);
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 try {
-    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
     // Set charset to UTF-8
     $mysqli->set_charset("utf8mb4");
 } catch (Exception $e) {

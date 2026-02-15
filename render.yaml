@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: electro-store
+    env: php
+    plan: free
+    buildCommand: "composer install"
+    startCommand: "vendor/bin/heroku-php-apache2"
+    envVars:
+      - key: APP_URL
+        value: ${RENDER_EXTERNAL_URL}
+      - key: DB_HOST
+        fromDatabase:
+          name: electro-store-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: electro-store-db
+          property: port
+      - key: DB_USER
+        fromDatabase:
+          name: electro-store-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: electro-store-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: electro-store-db
+          property: database
+
+databases:
+  - name: electro-store-db
+    plan: free
+    databaseName: electronics_store
+    user: electronics_user

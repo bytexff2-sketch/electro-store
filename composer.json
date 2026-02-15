@@ -1,0 +1,9 @@
+{
+  "name": "bytexff2/electro-store",
+  "description": "Electronics Store e-commerce platform",
+  "type": "project",
+  "require": {
+    "php": "^7.4 || ^8.0"
+  },
+  "require-dev": {}
+}
