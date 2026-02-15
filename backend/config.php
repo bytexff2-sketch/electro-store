@@ -10,10 +10,10 @@ ini_set('display_errors', 0);  // Don't show HTML errors
 ini_set('log_errors', 1);       // Log errors to file
 
 // Database credentials - use environment variables
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: 'Andrea2004@');
-define('DB_NAME', getenv('DB_NAME') ?: 'electronics_store');
+define('DB_HOST', getenv('DB_HOST') ?: 'y@srRNMmD2Y#NA5');
+define('DB_USER', getenv('DB_USER') ?: 'sql.freedb.tech');
+define('DB_PASS', getenv('DB_PASS') ?: 'freedb_Andrea2004@');
+define('DB_NAME', getenv('DB_NAME') ?: 'freedb_electronics-store');
 define('DB_PORT', getenv('DB_PORT') ?: '3306');
 
 // Application settings
