@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: electro-store
+    env: php8
+    plan: free
+    buildCommand: ""
+    startCommand: "php -S 0.0.0.0:$PORT -t ."
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: electro-store-db
+          property: host
+      - key: DB_USER
+        fromDatabase:
+          name: electro-store-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: electro-store-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: electro-store-db
+          property: database
+
+databases:
+  - name: electro-store-db
+    plan: free
+    databaseName: electronics_store
+    user: electronics_user
