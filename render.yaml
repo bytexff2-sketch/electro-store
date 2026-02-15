@@ -1,13 +1,11 @@
-services:
+ services:
   - type: web
     name: electro-store
-    env: php
+    env: php8
     plan: free
-    buildCommand: "composer install"
-    startCommand: "vendor/bin/heroku-php-apache2"
+    buildCommand: ""
+    startCommand: "php -S 0.0.0.0:$PORT -t ."
     envVars:
-      - key: APP_URL
-        value: ${RENDER_EXTERNAL_URL}
       - key: DB_HOST
         fromDatabase:
           name: electro-store-db
