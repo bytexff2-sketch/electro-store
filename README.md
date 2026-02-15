@@ -550,19 +550,65 @@ chmod 777 assets/images
 
 ---
 
-## Deployment Checklist
+## 🚀 Deployment Guide
 
-Before going live:
-- [ ] Update database credentials (not default)
-- [ ] Set `SESSION_TIMEOUT` appropriately
-- [ ] Enable HTTPS
-- [ ] Update APP_URL in config
+This project is ready to deploy to the cloud!
+
+### Quick Deployment (Choose One):
+
+**Railway** (Recommended - Easier)
+1. Go to https://railway.app
+2. Connect your GitHub account
+3. Deploy this repository
+4. Visit `/setup.php` to initialize the database
+5. Done! 🎉
+
+**Render**
+1. Go to https://render.com
+2. Connect your GitHub account
+3. Deploy from blueprint
+4. Visit `/setup.php` to initialize the database
+5. Done! 🎉
+
+### Detailed Instructions
+
+See the complete deployment guides:
+- 📖 **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Full step-by-step for both platforms
+- ⚡ **[QUICK_START.md](QUICK_START.md)** - 60-second quick reference
+
+### Environment Configuration
+
+The app uses **environment variables** for configuration:
+
+```bash
+# Database
+DB_HOST=your_host
+DB_USER=your_user
+DB_PASS=your_password
+DB_NAME=electronics_store
+DB_PORT=3306
+
+# Application
+APP_URL=https://your-domain.com
+```
+
+These are automatically detected from the hosting platform (Railway/Render).
+
+---
+
+## Pre-Deployment Checklist
+
+Before deploying to production:
+- [ ] Update admin password in setup/seed data
+- [ ] Test all functionality locally
+- [ ] Review database credentials (use platform secrets, not hardcoded)
+- [ ] Ensure HTTPS is enforced
 - [ ] Set proper file permissions
-- [ ] Backup database
-- [ ] Test all core functionality
-- [ ] Test responsive design
-- [ ] Verify email notifications (if adding)
-- [ ] Monitor error logs
+- [ ] Enable database backups on platform
+- [ ] Test responsive design on mobile
+- [ ] Configure error logging
+- [ ] Remove setup.php after initialization
+- [ ] Monitor error logs after deployment
 
 ---
 
