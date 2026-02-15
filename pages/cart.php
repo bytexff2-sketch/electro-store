@@ -190,8 +190,8 @@
                     <p style="font-size: 1.1rem; color: #856404; margin-bottom: 2rem;">
                         You need to log in first to view and manage your shopping cart.
                     </p>
-                    <a href="login.php" class="btn btn-primary" style="margin-right: 1rem;">Go to Login</a>
-                    <a href="../index.php" class="btn btn-secondary">Back to Home</a>
+                    <a href="login.php" class="btn btn-primry" style="margin-right: 1rem;">Go to Login</a>
+                    <a href="../index.php" class="btn btn-secondry" style ="margin-top:2px;">Back to Home</a>
                 </div>
             `;
         }
