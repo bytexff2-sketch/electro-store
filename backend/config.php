@@ -10,11 +10,11 @@ ini_set('display_errors', 0);  // Don't show HTML errors
 ini_set('log_errors', 1);       // Log errors to file
 
 // Database credentials - use environment variables
-define('DB_HOST', getenv('DB_HOST') ?: 'yamabiko.proxy.rlwy.net);
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: 'vUEabTqBsksWAaPDLNzMrfVkMfnwWzAL');
-define('DB_NAME', getenv('DB_NAME') ?: 'railway');
-define('DB_PORT', getenv('DB_PORT') ?: '10161');
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_USER', getenv('DB_USER') ?: 'a264133admin');
+define('DB_PASS', getenv('DB_PASS') ?: 'Andrea2004@');
+define('DB_NAME', getenv('DB_NAME') ?: 'a264133_pt5q8913');
+define('DB_PORT', getenv('DB_PORT') ?: '3306');
 
 // Application settings
 define('APP_NAME', 'Electronics Store');
